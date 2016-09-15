@@ -9,7 +9,7 @@ setuptools.setup(
     long_description="See https://pypi.python.org/pypi/PyCompatLayer",
     url="https://github.com/ale5000-git/pycompatlayer",
     author="ale5000",
-    author_email="",
+    author_email="nospam@nospam",
     license="LGPLv3+",
     platforms=["any"],
     py_modules=["pycompatlayer"],
