@@ -1,4 +1,4 @@
-# PyCompatLayer - compatibility layer for Python
+# PyCompatLayer - Compatibility layer for Python
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/PyCompatLayer.svg)](https://pypi.python.org/pypi/PyCompatLayer/)
 
 It make all versions of Python behaving as the latest version of Python 3.x.  
