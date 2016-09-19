@@ -13,6 +13,30 @@ __copyright__ = "Copyright (C) 2016, ale5000";
 __license__ = "LGPLv3+";
 
 
+def fix_base(fix_environ):
+    def _fix_android_environ():
+        import os;
+
+        lib_path = "/system/lib";
+        if os.path.exists("/system/lib64"):
+            lib_path = "/system/lib64" + os.pathsep + lib_path;
+        os.environ["LD_LIBRARY_PATH"] = os.environ.get("LD_LIBRARY_PATH", ".") + os.pathsep + lib_path;
+
+    def _fix_android_plat():
+        from distutils.spawn import find_executable;
+        if find_executable("dalvikvm") is not None:
+            sys.platform = "linux-android";
+
+    if sys.platform == "linux4" or sys.platform.startswith("linux-armv"):
+        _fix_android_plat();
+
+    if sys.platform.startswith("linux") and "-" not in sys.platform:
+        sys.platform = "linux";
+
+    if fix_environ and sys.platform == "linux-android":
+        _fix_android_environ();
+
+
 def fix_builtins(override_debug=False):
     override_dict = {};
     orig_print = None;
@@ -76,30 +100,6 @@ def fix_builtins(override_debug=False):
 
     builtins_dict.update(override_dict);
     del override_dict;
-
-
-def fix_base(fix_environ):
-    def _fix_android_environ():
-        import os;
-
-        lib_path = "/system/lib";
-        if os.path.exists("/system/lib64"):
-            lib_path = "/system/lib64" + os.pathsep + lib_path;
-        os.environ["LD_LIBRARY_PATH"] = os.environ.get("LD_LIBRARY_PATH", ".") + os.pathsep + lib_path;
-
-    def _fix_android_plat():
-        from distutils.spawn import find_executable;
-        if find_executable("dalvikvm") is not None:
-            sys.platform = "linux-android";
-
-    if sys.platform == "linux4" or sys.platform.startswith("linux-armv"):
-        _fix_android_plat();
-
-    if sys.platform.startswith("linux") and "-" not in sys.platform:
-        sys.platform = "linux";
-
-    if fix_environ and sys.platform == "linux-android":
-        _fix_android_environ();
 
 
 def fix_subprocess(override_debug=False, override_exception=False):
