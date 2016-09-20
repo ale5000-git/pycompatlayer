@@ -7,7 +7,7 @@ It is still under development, not all functions are supported.
 
 import sys;
 
-__version__ = "0.0.9";
+__version__ = "0.0.10-beta";
 __author__ = "ale5000";
 __copyright__ = "Copyright (C) 2016, ale5000";
 __license__ = "LGPLv3+";
@@ -108,13 +108,15 @@ def fix_subprocess(override_debug=False, override_exception=False):
     class _ExtendedCalledProcessError(subprocess.CalledProcessError):
         def __init__(self, returncode, cmd, output=None, stderr=None):
             try:
-                super(self.__class__, self).__init__(returncode=returncode, cmd=cmd, output=output);
+                super(self.__class__, self).__init__(returncode=returncode, cmd=cmd, output=output, stderr=stderr);
             except TypeError:
-                super(self.__class__, self).__init__(returncode=returncode, cmd=cmd);
-                self.output = output;
-            if getattr(self, "stdout", False) == False:
+                try:
+                    super(self.__class__, self).__init__(returncode=returncode, cmd=cmd, output=output);
+                except TypeError:
+                    super(self.__class__, self).__init__(returncode=returncode, cmd=cmd);
+                    self.output = output;
                 self.stdout = output;
-            self.stderr = stderr;
+                self.stderr = stderr;
 
     def _check_output(*popenargs, **kwargs):
         if "stdout" in kwargs:
@@ -128,7 +130,7 @@ def fix_subprocess(override_debug=False, override_exception=False):
             cmd = kwargs.get("args");
             if cmd is None:
                 cmd = popenargs[0];
-            raise _ExtendedCalledProcessError(returncode=ret_code, cmd=cmd, output=stdout_data, stderr=None);
+            raise _ExtendedCalledProcessError(returncode=ret_code, cmd=cmd, output=stdout_data);
         return stdout_data;
 
     try:
