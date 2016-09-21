@@ -51,10 +51,10 @@ def fix_builtins(override_debug=False):
             import __builtin__ as builtins
         builtins_dict = builtins.__dict__
 
-    def _superseded(*args, **kwargs):
-        """Report the fact that the called function is superseded."""
+    def _deprecated(*args, **kwargs):
+        """Report the fact that the called function is deprecated."""
         import traceback
-        raise NameError(_superseded.__module__+" module: the called function is superseded => "+traceback.extract_stack(None, 2)[0][3])
+        raise DeprecationWarning("the called function is deprecated => "+traceback.extract_stack(None, 2)[0][3])
 
     def _print_wrapper(*args, **kwargs):
         flush = kwargs.get("flush", False)
@@ -85,7 +85,7 @@ def fix_builtins(override_debug=False):
     # Function 'input'
     if builtins_dict.get("raw_input") is not None:
         override_dict["input"] = builtins_dict.get("raw_input")
-        override_dict["raw_input"] = _superseded
+    override_dict["raw_input"] = _deprecated
     # Function 'print' (also aliased as print_)
     if sys.version_info >= (3, 3):
         used_print = builtins_dict.get("print")
