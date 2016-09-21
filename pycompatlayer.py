@@ -79,6 +79,9 @@ def fix_builtins(override_debug=False):
         list.sort()
         return list
 
+    if builtins_dict.get(__name__, False):
+        raise RuntimeError(__name__+" already loaded")
+
     # Function 'input'
     if builtins_dict.get("raw_input") is not None:
         override_dict["input"] = builtins_dict.get("raw_input")
@@ -98,6 +101,7 @@ def fix_builtins(override_debug=False):
     if builtins_dict.get("sorted") is None:
         override_dict["sorted"] = _sorted
 
+    override_dict[__name__] = True
     builtins_dict.update(override_dict)
     del override_dict
 
