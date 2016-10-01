@@ -4,7 +4,7 @@ import setuptools
 setuptools.setup(
     zip_safe=True,
     name="PyCompatLayer",
-    version="0.0.9",
+    version="0.0.10",
     description="Compatibility layer for Python",
     long_description="See https://pypi.python.org/pypi/PyCompatLayer",
     url="https://github.com/ale5000-git/pycompatlayer",
