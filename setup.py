@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+"""Setup for PyCompatLayer (The compatibility layer for Python)."""
+
 import setuptools
 
 setuptools.setup(
@@ -36,4 +38,7 @@ setuptools.setup(
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
     ],
+
+    #bugtrack_url="https://github.com/ale5000-git/pycompatlayer/issues",
+    keywords="compatibility compatlayer"
 )
