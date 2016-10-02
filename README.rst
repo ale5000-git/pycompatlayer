@@ -1,4 +1,4 @@
-PyCompatLayer - Compatibility layer for Python
+PyCompatLayer
 ==============================================
 .. image:: https://img.shields.io/pypi/pyversions/PyCompatLayer.svg
    :target: https://pypi.python.org/pypi/PyCompatLayer
