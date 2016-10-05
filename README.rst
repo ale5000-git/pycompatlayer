@@ -7,7 +7,7 @@ PyCompatLayer
 Informations
 ------------
 * It make all versions of Python behaving as the latest version of Python 3.
-* This will allow you to be compatible with all versions of Python without effort.
+* It will allow to add compatibility with all versions of Python without effort.
 
 It is still under development, not all functions are supported.
 

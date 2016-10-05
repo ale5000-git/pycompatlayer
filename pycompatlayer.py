@@ -1,13 +1,13 @@
 """PyCompatLayer - Compatibility layer for Python.
 
-It make all versions of Python behaving as the latest version of Python 3.x.
-This will allow you to be compatible with all versions of Python without effort.
+It make all versions of Python behaving as the latest version of Python 3.
+It will allow to add compatibility with all versions of Python without effort.
 It is still under development, not all functions are supported.
 """
 
 import sys
 
-__version__ = "0.0.10"
+__version__ = "0.0.10-1"
 __author__ = "ale5000"
 __copyright__ = "Copyright (C) 2016, ale5000"
 __license__ = "LGPLv3+"
@@ -143,7 +143,7 @@ def fix_subprocess(override_debug=False, override_exception=False):
         return stdout_data
 
     try:
-        from subprocess import check_output
+        subprocess.check_output
     except ImportError:
         subprocess.check_output = _check_output
 
