@@ -143,7 +143,7 @@ def fix_subprocess(override_debug=False, override_exception=False):
         return stdout_data
 
     try:
-        subprocess.check_output_
+        subprocess.check_output
     except AttributeError:
         subprocess.check_output = _check_output
 
