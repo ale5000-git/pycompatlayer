@@ -59,7 +59,8 @@ def fix_builtins(override_debug=False):
     def _deprecated(*args, **kwargs):
         """Report the fact that the called function is deprecated."""
         import traceback
-        raise DeprecationWarning("the called function is deprecated => "+traceback.extract_stack(None, 2)[0][3])
+        raise DeprecationWarning("the called function is deprecated => " +
+                                 traceback.extract_stack(None, 2)[0][3])
 
     def _print_wrapper(*args, **kwargs):
         flush = kwargs.get("flush", False)
@@ -75,7 +76,8 @@ def fix_builtins(override_debug=False):
             if(key in opt):
                 opt[key] = kwargs[key]
             else:
-                raise TypeError("'"+key+"' is an invalid keyword argument for this function")
+                raise TypeError("'"+key+"' is an invalid keyword argument "
+                                "for this function")
         opt["file"].write(opt["sep"].join(str(val) for val in args)+opt["end"])
         if opt["flush"]:
             opt["file"].flush()
@@ -114,7 +116,7 @@ def fix_builtins(override_debug=False):
 def fix_subprocess(override_debug=False, override_exception=False):
     import subprocess
 
-    class _ExtendedCalledProcessError(subprocess.CalledProcessError):
+    class ExtendedCalledProcessError(subprocess.CalledProcessError):
         def __init__(self, returncode, cmd, output=None, stderr=None):
             try:
                 super(self.__class__, self).__init__(returncode=returncode, cmd=cmd, output=output, stderr=stderr)
@@ -127,10 +129,11 @@ def fix_subprocess(override_debug=False, override_exception=False):
                 self.stdout = output
                 self.stderr = stderr
 
-    def _check_output(*popenargs, **kwargs):
+    def _check_output(*args, **kwargs):
         if "stdout" in kwargs:
-            raise ValueError("stdout argument not allowed, it will be overridden.")
-        process = subprocess.Popen(stdout=subprocess.PIPE, *popenargs, **kwargs)
+            raise ValueError("stdout argument not allowed, "
+                             "it will be overridden.")
+        process = subprocess.Popen(stdout=subprocess.PIPE, *args, **kwargs)
         stdout_data, __ = process.communicate()
         ret_code = process.poll()
         if ret_code is None:
@@ -138,8 +141,8 @@ def fix_subprocess(override_debug=False, override_exception=False):
         if ret_code:
             cmd = kwargs.get("args")
             if cmd is None:
-                cmd = popenargs[0]
-            raise _ExtendedCalledProcessError(returncode=ret_code, cmd=cmd, output=stdout_data)
+                cmd = args[0]
+            raise ExtendedCalledProcessError(returncode=ret_code, cmd=cmd, output=stdout_data)
         return stdout_data
 
     try:
