@@ -14,6 +14,7 @@ __license__ = "LGPLv3+"
 
 
 def fix_base(fix_environ):
+    """Activate the base compatibility."""
     def _fix_android_environ():
         import os
 
@@ -43,6 +44,7 @@ def fix_base(fix_environ):
 
 
 def fix_builtins(override_debug=False):
+    """Activate the builtins compatibility."""
     override_dict = {}
     orig_print = None
     used_print = None
@@ -114,9 +116,11 @@ def fix_builtins(override_debug=False):
 
 
 def fix_subprocess(override_debug=False, override_exception=False):
+    """Activate the subprocess compatibility."""
     import subprocess
 
     class ExtendedCalledProcessError(subprocess.CalledProcessError):
+        """This exception is raised when a process run by check_call() or check_output() returns a non-zero exit status."""
         def __init__(self, returncode, cmd, output=None, stderr=None):
             try:
                 super(self.__class__, self).__init__(returncode=returncode, cmd=cmd, output=output, stderr=stderr)
@@ -152,6 +156,7 @@ def fix_subprocess(override_debug=False, override_exception=False):
 
 
 def fix_all(override_debug=False, override_all=False):
+    """Activate the full compatibility."""
     fix_base(True)
     fix_builtins(override_debug)
     fix_subprocess(override_debug, override_all)
