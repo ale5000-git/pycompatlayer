@@ -22,9 +22,9 @@ def fix_base(fix_environ):
             os.environ["LD_LIBRARY_PATH"] = "."
 
         lib64_path = ""
-        lib32_path = os.pathsep + "/system/lib"
+        lib32_path = os.pathsep+"/system/lib"+os.pathsep+"/vendor/lib"
         if os.path.exists("/system/lib64"):
-            lib64_path = os.pathsep + "/system/lib64"
+            lib64_path = os.pathsep+"/system/lib64"+os.pathsep+"/vendor/lib64"
 
         os.environ["LD_LIBRARY_PATH"] += lib64_path + lib32_path
 
