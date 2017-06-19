@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """PyCompatLayer - Compatibility layer for Python.
 
 It make all versions of Python behaving as the latest version of Python 3.
@@ -9,7 +10,7 @@ import sys
 
 __version__ = "0.0.10-1"
 __author__ = "ale5000"
-__copyright__ = "Copyright (C) 2016, ale5000"
+__copyright__ = "Copyright (C) 2016-2017, ale5000"
 __license__ = "LGPLv3+"
 
 
