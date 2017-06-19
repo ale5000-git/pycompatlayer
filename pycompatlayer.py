@@ -85,9 +85,10 @@ def fix_builtins(override_debug=False):
         if opt["flush"]:
             opt["file"].flush()
 
-    def _sorted(list):
-        list.sort()
-        return list
+    def _sorted(my_list):
+        my_list=list(my_list)
+        my_list.sort()
+        return my_list
 
     if builtins_dict.get(__name__, False):
         raise RuntimeError(__name__+" already loaded")
