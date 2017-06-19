@@ -125,12 +125,12 @@ def fix_subprocess(override_debug=False, override_exception=False):
         """This exception is raised when a process run by check_call() or check_output() returns a non-zero exit status."""
         def __init__(self, returncode, cmd, output=None, stderr=None):
             try:
-                super(self.__class__, self).__init__(returncode=returncode, cmd=cmd, output=output, stderr=stderr)
+                super(ExtendedCalledProcessError, self).__init__(returncode=returncode, cmd=cmd, output=output, stderr=stderr)
             except TypeError:
                 try:
-                    super(self.__class__, self).__init__(returncode=returncode, cmd=cmd, output=output)
+                    super(ExtendedCalledProcessError, self).__init__(returncode=returncode, cmd=cmd, output=output)
                 except TypeError:
-                    super(self.__class__, self).__init__(returncode=returncode, cmd=cmd)
+                    super(ExtendedCalledProcessError, self).__init__(returncode=returncode, cmd=cmd)
                     self.output = output
                 self.stdout = output
                 self.stderr = stderr
