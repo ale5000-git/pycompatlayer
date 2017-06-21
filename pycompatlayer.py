@@ -14,6 +14,15 @@ __copyright__ = "Copyright (C) 2016-2017, ale5000"
 __license__ = "LGPLv3+"
 
 
+def set_utf8_default():
+    if sys.getdefaultencoding() != "utf-8":
+        try:
+            reload(sys)
+            sys.setdefaultencoding("utf-8")
+        except NameError:
+            pass
+
+
 def fix_base(fix_environ):
     """Activate the base compatibility."""
     def _fix_android_environ():
