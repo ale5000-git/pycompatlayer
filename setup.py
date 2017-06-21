@@ -6,7 +6,7 @@ import setuptools
 setuptools.setup(
     zip_safe=True,
     name="PyCompatLayer",
-    version="0.0.10-1",
+    version="0.0.10-2",
     description="Compatibility layer for Python",
     long_description="See https://pypi.python.org/pypi/PyCompatLayer",
     url="https://github.com/ale5000-git/pycompatlayer",
@@ -32,6 +32,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: Implementation :: PyPy",
 
         ("License :: OSI Approved :: "
          "GNU Lesser General Public License v3 or later (LGPLv3+)"),
@@ -40,5 +41,5 @@ setuptools.setup(
     ],
 
     # bugtrack_url="https://github.com/ale5000-git/pycompatlayer/issues",
-    keywords="compatibility compatlayer"
+    keywords="compatibility compatlayer pycompatlayer"
 )
