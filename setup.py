@@ -42,5 +42,5 @@ setuptools.setup(
     ],
 
     # bugtrack_url="https://github.com/ale5000-git/pycompatlayer/issues",
-    keywords="compatibility compatlayer pycompatlayer"
+    keywords="python python-library pycompatlayer compatlayer compatibility"
 )
