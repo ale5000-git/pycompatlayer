@@ -1,13 +1,15 @@
 PyCompatLayer
 =============
 
+Latest release
+--------------
+.. image:: https://img.shields.io/pypi/v/PyCompatLayer.svg
+   :alt: Version
+   :target: https://pypi.python.org/pypi/PyCompatLayer
+
 .. image:: https://img.shields.io/github/license/ale5000-git/pycompatlayer.svg
    :alt: License
    :target: https://github.com/ale5000-git/pycompatlayer/blob/master/LICENSE
-|
-.. image:: https://api.codacy.com/project/badge/Grade/38c8566189bc44eb91532e3004236c57
-   :alt: Codacy Badge
-   :target: https://www.codacy.com/app/ale5000-git/pycompatlayer?utm_source=github.com&utm_medium=referral&utm_content=ale5000-git/pycompatlayer&utm_campaign=badger
 
 Informations
 ------------
@@ -25,3 +27,9 @@ Compatibility
 Dependencies
 ------------
 None.
+
+Code analysis
+-------------
+.. image:: https://api.codacy.com/project/badge/Grade/38c8566189bc44eb91532e3004236c57
+   :alt: Codacy Badge
+   :target: https://www.codacy.com/app/ale5000-git/pycompatlayer?utm_source=github.com&utm_medium=referral&utm_content=ale5000-git/pycompatlayer&utm_campaign=badger
