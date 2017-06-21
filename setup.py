@@ -18,6 +18,7 @@ setuptools.setup(
 
     classifiers=[
         "Development Status :: 4 - Beta",
+        "Topic :: Software Development :: Libraries :: Python Modules",
 
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 2.4",
