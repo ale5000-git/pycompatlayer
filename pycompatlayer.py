@@ -96,7 +96,7 @@ def fix_builtins(override_debug=False):
             opt["file"].flush()
 
     def _sorted(my_list):
-        my_list=list(my_list)
+        my_list = list(my_list)
         my_list.sort()
         return my_list
 
