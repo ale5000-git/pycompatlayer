@@ -18,6 +18,10 @@ Informations
 
 It is still under development, not all functions are supported.
 
+You can find the documentation on ReadTheDocs_.
+
+.. _ReadTheDocs: https://pycompatlayer.readthedocs.io/
+
 Compatibility
 ------------
 .. image:: https://img.shields.io/pypi/pyversions/PyCompatLayer.svg
