@@ -18,8 +18,10 @@ Informations
 
 It is still under development, not all functions are supported.
 
-You can find the documentation on ReadTheDocs_.
+The code lives on GitHub_, where you can report Issues_. The documentation is available on ReadTheDocs_.
 
+.. _GitHub: https://github.com/ale5000-git/pycompatlayer
+.. _Issues: https://github.com/ale5000-git/pycompatlayer/issues
 .. _ReadTheDocs: https://pycompatlayer.readthedocs.io/
 
 Compatibility
