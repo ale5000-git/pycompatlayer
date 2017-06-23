@@ -132,7 +132,9 @@ def fix_subprocess(override_debug=False, override_exception=False):
     import subprocess
 
     class ExtCalledProcessError(subprocess.CalledProcessError):
-        """This exception is raised when a process run by check_call() or check_output() returns a non-zero exit status."""
+        """Raised when a process run by check_call() or check_output()
+        returns a non-zero exit status."""
+
         def __init__(self, returncode, cmd, output=None, stderr=None):
             try:
                 super(ExtCalledProcessError, self).__init__(returncode=returncode,
