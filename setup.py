@@ -3,6 +3,13 @@
 
 import setuptools
 
+def custom_test_suite():
+    try:
+        import unittest2 as unittest
+    except ImportError:
+        import unittest
+    return unittest.TestLoader().discover("tests", pattern="*_test.py")
+
 setuptools.setup(
     zip_safe=True,
     name="PyCompatLayer",
@@ -15,6 +22,7 @@ setuptools.setup(
     license="LGPLv3+",
     platforms=["any"],
     py_modules=["pycompatlayer"],
+    test_suite="setup.custom_test_suite",
 
     classifiers=[
         "Development Status :: 4 - Beta",

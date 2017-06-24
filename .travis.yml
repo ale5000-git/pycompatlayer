@@ -1,0 +1,48 @@
+sudo: false
+language: python
+
+git:
+  depth: 1
+
+env:
+  global: TERM=dumb
+
+matrix:
+  include:
+    - os: linux
+      python: "2.6"
+      env: TOXENV=py26
+    - os: linux
+      python: "2.7"
+      env: TOXENV=py27
+    - os: linux
+      python: "3.2"
+      env: TOXENV=py32
+    - os: linux
+      python: "3.3"
+      env: TOXENV=py33
+    - os: linux
+      python: "nightly"
+      env: TOXENV=py-nightly
+    - os: linux
+      python: "pypy"
+      env: TOXENV=pypy
+    - os: linux
+      python: "pypy3"
+      env: TOXENV=pypy3
+    - os: osx
+      language: generic
+      env: TOXENV=py-default
+  allow_failures:
+    - os: osx
+  fast_finish: true
+
+install:
+  - if [[ $TOXENV == 'py26' ]]; then pip install unittest2; fi
+  - pip install codecov
+
+script:
+  - if [[ $TOXENV != 'py32' ]]; then echo Running Coverage...; coverage run setup.py test; else echo Running script...; python pycompatlayer.py; fi
+
+after_success:
+  - if [[ $TOXENV != 'py32' ]]; then codecov; fi
