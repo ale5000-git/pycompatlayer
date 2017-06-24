@@ -39,3 +39,7 @@ Code analysis
 .. image:: https://api.codacy.com/project/badge/Grade/38c8566189bc44eb91532e3004236c57
    :alt: Codacy Badge
    :target: https://www.codacy.com/app/ale5000-git/pycompatlayer?utm_source=github.com&utm_medium=referral&utm_content=ale5000-git/pycompatlayer&utm_campaign=badger
+   
+.. image:: https://codebeat.co/badges/ab05b70b-9386-4696-a89d-dcacab208284
+   :alt: Codebeat Badge
+   :target: https://codebeat.co/projects/github-com-ale5000-git-pycompatlayer-master
