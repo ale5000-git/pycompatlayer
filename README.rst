@@ -1,6 +1,10 @@
 PyCompatLayer
 =============
 
+.. image:: https://travis-ci.org/ale5000-git/pycompatlayer.svg?branch=master
+   :alt: Travis CI
+   :target: https://travis-ci.org/ale5000-git/pycompatlayer
+
 Latest release
 --------------
 .. image:: https://img.shields.io/pypi/v/PyCompatLayer.svg
