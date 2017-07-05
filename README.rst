@@ -1,9 +1,12 @@
 PyCompatLayer
 =============
-
 .. image:: https://travis-ci.org/ale5000-git/pycompatlayer.svg?branch=master
    :alt: Travis CI
    :target: https://travis-ci.org/ale5000-git/pycompatlayer
+
+.. image:: https://codecov.io/gh/ale5000-git/pycompatlayer/branch/master/graph/badge.svg
+   :alt: Coverage
+   :target: https://codecov.io/gh/ale5000-git/pycompatlayer
 
 Latest release
 --------------
@@ -53,5 +56,5 @@ Code analysis
    :target: https://codeclimate.com/github/ale5000-git/pycompatlayer
 
 .. image:: https://www.quantifiedcode.com/api/v1/project/d519935774504524bf64fad77e30fb0f/badge.svg
-   :alt: Code issues
+   :alt: Code Issues
    :target: https://www.quantifiedcode.com/app/project/d519935774504524bf64fad77e30fb0f
