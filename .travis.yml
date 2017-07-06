@@ -38,7 +38,7 @@ matrix:
   fast_finish: true
 
 install:
-  - if [[ $TOXENV == 'py26' ]]; then pip install unittest2; fi
+  - pip install unittest2
   - pip install codecov
 
 script:
