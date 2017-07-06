@@ -7,18 +7,6 @@ test_requirements=[
     "unittest2"
 ]
 
-def custom_test_suite():
-    import sys
-
-    try:
-        if sys.version_info <= (3, 4):
-            import unittest2 as unittest
-        else:
-            import unittest
-    except ImportError:
-        import unittest
-    return unittest.TestLoader().discover("tests", pattern="*_test.py")
-
 setuptools.setup(
     zip_safe=True,
     name="PyCompatLayer",
@@ -32,7 +20,7 @@ setuptools.setup(
     platforms=["any"],
     py_modules=["pycompatlayer"],
     tests_require=test_requirements,
-    test_suite="setup.custom_test_suite",
+    test_suite="tests.custom_test_suite",
 
     classifiers=[
         "Development Status :: 4 - Beta",
