@@ -4,7 +4,7 @@
 
 import setuptools
 
-test_requirements=[
+test_requirements = [
     "unittest2"
 ]
 
