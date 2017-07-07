@@ -54,7 +54,9 @@ def fix_base(fix_environ):
         _fix_android_environ()
 
     # Useful custom variables
-    sys.python_bits = 64 if sys.maxsize > 2**32 else 32
+    sys.python_bits = 32
+    if sys.maxsize > 2**32:
+        sys.python_bits = 64
 
 
 def fix_builtins(override_debug=False):
