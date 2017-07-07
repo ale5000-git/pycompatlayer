@@ -53,6 +53,9 @@ def fix_base(fix_environ):
     if fix_environ and sys.platform == "linux-android":
         _fix_android_environ()
 
+    if 'maxsize' not in sys.__dict__:
+        sys.maxsize = 2147483647  # Assume this if not known (for now)
+
     # Useful custom variables
     sys.python_bits = 32
     if sys.maxsize > 2**32:
