@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """Setup for PyCompatLayer (The compatibility layer for Python)."""
 
 import setuptools
