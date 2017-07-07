@@ -50,11 +50,11 @@ matrix:
   fast_finish: true
 
 install:
-  - pip install unittest2
-  - pip install codecov
+  - .travis/setup_dependencies.sh
 
 script:
-  - if [[ $TOXENV != 'py32' ]]; then echo Run testing and Coverage testing...; coverage run setup.py test; else echo Run testing...; python setup.py test; fi
+  - .travis/run_codecov.sh 'pycompatlayer.py'
 
 after_success:
-  - if [[ $TOXENV != 'py32' ]]; then codecov; fi
+  # Upload result
+  - if [[ $TRAVIS_PYTHON_VERSION != '2.4' ]]; then codecov; fi
