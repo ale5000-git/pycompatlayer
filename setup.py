@@ -25,8 +25,15 @@ setuptools.setup(
 
     classifiers=[
         "Development Status :: 4 - Beta",
+        "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules",
 
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        ("License :: OSI Approved :: "
+         "GNU Lesser General Public License v3 or later (LGPLv3+)"),
+
+        "Programming Language :: Python",
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 2.4",
         "Programming Language :: Python :: 2.5",
@@ -40,12 +47,8 @@ setuptools.setup(
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: Implementation :: PyPy",
-
-        ("License :: OSI Approved :: "
-         "GNU Lesser General Public License v3 or later (LGPLv3+)"),
-        "Intended Audience :: Developers",
-        "Operating System :: OS Independent",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy"
     ],
 
     # bugtrack_url="https://github.com/ale5000-git/pycompatlayer/issues",
