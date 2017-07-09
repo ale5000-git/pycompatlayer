@@ -18,6 +18,7 @@ matrix:
             - sourceline: 'ppa:fkrull/deadsnakes'
           packages:
             - python2.4
+            - python2.4-dev
             - python-virtualenv
       before_install: . .travis/setup_virtualenv.sh '2.4'
     - os: linux
@@ -57,4 +58,4 @@ script:
 
 after_success:
   # Upload results
-  - if [[ $TRAVIS_PYTHON_VERSION != '2.4' ]]; then codecov; else bash <(curl -s https://codecov.io/bash); fi
+  - if [[ $TRAVIS_PYTHON_VERSION != '2.5' && $TRAVIS_PYTHON_VERSION != '2.4' ]]; then codecov; else bash <(curl -s https://codecov.io/bash); fi
