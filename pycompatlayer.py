@@ -9,7 +9,7 @@ It is still under development, not all functions are supported.
 
 import sys
 
-__version__ = "0.0.10-2"
+__version__ = "0.0.10.dev3"
 __author__ = "ale5000"
 __copyright__ = "Copyright (C) 2016-2017, ale5000"
 __license__ = "LGPLv3+"
