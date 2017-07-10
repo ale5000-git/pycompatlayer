@@ -1,4 +1,5 @@
 sudo: false
+os: linux
 language: python
 
 git:
@@ -9,8 +10,7 @@ env:
 
 matrix:
   include:
-    - os: linux
-      env: Python=2.4
+    - env: Python=2.4
       language: generic
       addons:
         apt:
@@ -21,8 +21,7 @@ matrix:
             - python2.4-dev
             - python-virtualenv=1.7.1.2-1
       before_install: . .travis/setup_virtualenv.sh '2.4'
-    - os: linux
-      env: Python=2.5
+    - env: Python=2.5
       language: generic
       addons:
         apt:
@@ -33,12 +32,9 @@ matrix:
             - python2.5-dev
             - python-virtualenv=1.7.1.2-1
       before_install: . .travis/setup_virtualenv.sh '2.5'
-    - os: linux
-      python: "2.6"
-    - os: linux
-      python: "2.7"
-    - os: linux
-      env: Python=3.1
+    - python: "2.6"
+    - python: "2.7"
+    - env: Python=3.1
       language: generic
       addons:
         apt:
@@ -49,27 +45,19 @@ matrix:
             - python3.1-dev
             - python-virtualenv=1.7.1.2-1
       before_install: . .travis/setup_virtualenv.sh '3.1'
-    - os: linux
-      python: "3.2"
-    - os: linux
-      python: "3.3"
-    - os: linux
-      python: "3.4"
-    - os: linux
-      python: "3.5"
-    - os: linux
-      python: "3.6"
-    - os: linux
-      python: "nightly"
-    - os: linux
-      python: "pypy"
-    - os: linux
-      python: "pypy-5.3.1"
-    - os: linux
-      python: "pypy3"
+    - python: "3.2"
+    - python: "3.3"
+    - python: "3.4"
+    - python: "3.5"
+    - python: "3.6"
+    - python: "nightly"
+    - python: "pypy"
+    - python: "pypy-5.3.1"
+    - python: "pypy3"
+
     - os: osx
+      env: Python=default
       language: generic
-      env: TOXENV=py-default
   allow_failures:
     - os: osx
   fast_finish: true
