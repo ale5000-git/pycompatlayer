@@ -55,8 +55,8 @@ matrix:
     - python: "pypy-5.3.1"
     - python: "pypy3"
 
-    - os: osx
-      env: Python=default
+    - env: Python=2.7 (macOS)
+      os: osx
       language: generic
   allow_failures:
     - os: osx
