@@ -20,7 +20,7 @@ matrix:
             - python2.4
             - python2.4-dev
             - python-virtualenv=1.7.1.2-1
-      before_install: . .travis/setup_virtualenv.sh '2.4'
+      before_install: . .travis/setup_virtualenv.sh
     - env: Python=2.5
       language: generic
       addons:
@@ -31,7 +31,7 @@ matrix:
             - python2.5
             - python2.5-dev
             - python-virtualenv=1.7.1.2-1
-      before_install: . .travis/setup_virtualenv.sh '2.5'
+      before_install: . .travis/setup_virtualenv.sh
     - python: "2.6"
     - python: "2.7"
     - env: Python=3.1
@@ -44,7 +44,7 @@ matrix:
             - python3.1
             - python3.1-dev
             - python-virtualenv=1.7.1.2-1
-      before_install: . .travis/setup_virtualenv.sh '3.1'
+      before_install: . .travis/setup_virtualenv.sh
     - python: "3.2"
     - python: "3.3"
     - python: "3.4"
@@ -55,7 +55,7 @@ matrix:
     - python: "pypy-5.3.1"
     - python: "pypy3"
 
-    - env: Python=2.7 (macOS)
+    - env: Python=2.7
       os: osx
       language: generic
   allow_failures:
