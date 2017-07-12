@@ -9,10 +9,20 @@ It is still under development, not all functions are supported.
 
 import sys
 
-__version__ = "0.0.10.dev3"
+__version__ = "0.0.10.dev4"
 __author__ = "ale5000"
 __copyright__ = "Copyright (C) 2016-2017, ale5000"
 __license__ = "LGPLv3+"
+
+
+class _Internal:
+    class ExtStr(str):
+        def format(format_spec, value):  # Largely incomplete
+            format_spec = format_spec.replace("{:", "%").replace("}", "")
+            return format_spec % (value, )
+
+        def __format__(value, format_spec):  # Largely incomplete
+            return "%"+format_spec % (value, )
 
 
 def set_utf8_default():
@@ -108,9 +118,14 @@ def fix_builtins(override_debug=False):
         my_list.sort()
         return my_list
 
+    def _format(value, format_spec):
+        return value.__format__(format_spec)
+
     if builtins_dict.get(__name__, False):
         raise RuntimeError(__name__+" already loaded")
 
+    if 'format' not in str.__dict__:
+        override_dict["str"] = _Internal.ExtStr
     # Function 'input'
     if builtins_dict.get("raw_input") is not None:
         override_dict["input"] = builtins_dict.get("raw_input")
@@ -129,6 +144,9 @@ def fix_builtins(override_debug=False):
     # Function 'sorted'
     if builtins_dict.get("sorted") is None:
         override_dict["sorted"] = _sorted
+    # Function 'format'
+    if builtins_dict.get("format") is None:
+        override_dict["format"] = _format
 
     override_dict[__name__] = True
     builtins_dict.update(override_dict)
