@@ -16,6 +16,8 @@ __license__ = "LGPLv3+"
 
 
 class _Internal:
+    """For internal use only."""
+
     class ExtStr(str):
         def format(format_spec, value):  # Largely incomplete
             format_spec = format_spec.replace("{:", "%").replace("}", "")
