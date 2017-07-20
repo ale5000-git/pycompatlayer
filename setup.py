@@ -19,6 +19,7 @@ setuptools.setup(
     author_email="nospam@nospam",
     license="LGPLv3+",
     platforms=["any"],
+    package_dir={"": "pycompatlayer"},
     py_modules=["pycompatlayer"],
     tests_require=test_requirements,
     test_suite="tests.custom_test_suite",
