@@ -32,7 +32,7 @@ The code lives on GitHub_, where you can report Issues_. The documentation is av
 .. _ReadTheDocs: https://pycompatlayer.readthedocs.io/
 
 Compatibility
-------------
+-------------
 .. image:: https://img.shields.io/pypi/pyversions/PyCompatLayer.svg
    :alt: Supported Python versions
    :target: https://pypi.python.org/pypi/PyCompatLayer
