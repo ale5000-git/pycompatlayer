@@ -6,7 +6,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   main
+   intro
+   api
 
 
 Indices and tables
