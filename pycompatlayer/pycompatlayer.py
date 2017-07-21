@@ -20,7 +20,7 @@ class _Internal:
 
     class ExtStr(str):
         def format(format_spec, value):  # Largely incomplete
-            format_spec = format_spec.replace("{:", "%").replace("}", "")
+            format_spec = format_spec.replace("{}", "%s").replace("{:", "%").replace("}", "")
             return format_spec % (value, )
 
         def __format__(value, format_spec):  # Largely incomplete
