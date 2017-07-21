@@ -1,7 +1,7 @@
 sudo: false
 os: linux
 language: python
-dist: trusty
+dist: precise
 
 git:
   depth: 1
