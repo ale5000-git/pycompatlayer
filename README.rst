@@ -54,7 +54,3 @@ Code analysis
 .. image:: https://codeclimate.com/github/ale5000-git/pycompatlayer/badges/gpa.svg
    :alt: Code Climate Badge
    :target: https://codeclimate.com/github/ale5000-git/pycompatlayer
-
-.. image:: https://www.quantifiedcode.com/api/v1/project/d519935774504524bf64fad77e30fb0f/badge.svg
-   :alt: Code Issues
-   :target: https://www.quantifiedcode.com/app/project/d519935774504524bf64fad77e30fb0f
