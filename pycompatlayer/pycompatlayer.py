@@ -27,11 +27,11 @@ class _Internal:
             return "%"+format_spec % (value, )
 
 
-def set_utf8_default():
-    if sys.getdefaultencoding() != "utf-8":
+def set_default_encoding(encoding="utf-8"):
+    if sys.getdefaultencoding() != encoding:
         try:
             reload(sys)
-            sys.setdefaultencoding("utf-8")
+            sys.setdefaultencoding(encoding)
         except NameError:
             pass
 
