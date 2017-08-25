@@ -8,6 +8,7 @@ PyCompatLayer
    :alt: Coverage
    :target: https://codecov.io/gh/ale5000-git/pycompatlayer
 
+
 Latest release
 --------------
 .. image:: https://img.shields.io/pypi/v/PyCompatLayer.svg
@@ -17,6 +18,7 @@ Latest release
 .. image:: https://img.shields.io/github/license/ale5000-git/pycompatlayer.svg
    :alt: License
    :target: https://github.com/ale5000-git/pycompatlayer/blob/master/LICENSE
+
 
 Informations
 ------------
@@ -31,15 +33,25 @@ The code lives on GitHub_, where you can report Issues_. The documentation is av
 .. _Issues: https://github.com/ale5000-git/pycompatlayer/issues
 .. _ReadTheDocs: https://pycompatlayer.readthedocs.io/
 
+
 Compatibility
 -------------
 .. image:: https://img.shields.io/pypi/pyversions/PyCompatLayer.svg
    :alt: Supported Python versions
    :target: https://pypi.python.org/pypi/PyCompatLayer
 
+
 Dependencies
 ------------
 None.
+
+
+Installation
+------------
+To install the latest release run this command: ``pip install -U PyCompatLayer``.
+
+Instead to install the latest development version run this one: ``pip install -U https://api.github.com/repos/ale5000-git/pycompatlayer/zipball/master#egg=PyCompatLayer``.
+
 
 Code analysis
 -------------
