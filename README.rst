@@ -48,9 +48,11 @@ None.
 
 Installation
 ------------
-To install the latest release run this command: ``pip install -U PyCompatLayer``.
-
-Instead to install the latest development version run this one: ``pip install -U https://api.github.com/repos/ale5000-git/pycompatlayer/zipball/master#egg=PyCompatLayer``.
+| To install the latest release run this command:
+| ``pip install -U PyCompatLayer``
+| 
+| Instead to install the latest development version run this one:
+| ``pip install -U https://api.github.com/repos/ale5000-git/pycompatlayer/zipball/master#egg=PyCompatLayer``
 
 
 Code analysis
