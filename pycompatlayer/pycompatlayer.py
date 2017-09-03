@@ -175,8 +175,6 @@ def fix_builtins(override_debug=False):
     # Exceptions
     if builtins_dict.get("BaseException") is None:
         override_dict["BaseException"] = Exception
-    if builtins_dict.get("SubprocessError") is None:
-        override_dict["SubprocessError"] = _Internal.SubprocessError
 
     if 'format' not in str.__dict__:
         override_dict["str"] = _Internal.ExtStr
@@ -211,12 +209,15 @@ def fix_subprocess(override_debug=False, override_exception=False):
     """Activate the subprocess compatibility."""
     import subprocess
 
+    # Exceptions
     if _InternalReferences.UsedCalledProcessError is None:
         if "CalledProcessError" in subprocess.__dict__:
             _subprocess_called_process_error(True, subprocess)
         else:
             _subprocess_called_process_error(False, subprocess)
             subprocess.CalledProcessError = _InternalReferences.UsedCalledProcessError
+    if subprocess.__dict__.get("SubprocessError") is None:
+        subprocess.SubprocessError = _Internal.SubprocessError
 
     def _check_output(*args, **kwargs):
         if "stdout" in kwargs:
