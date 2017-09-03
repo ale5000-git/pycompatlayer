@@ -23,19 +23,20 @@ class _InternalReferences:
 class _Internal:
     """For internal use only."""
 
-    class CalledProcessError(Exception):
-        """Raised when a process run by check_call() or check_output()
-        returns a non-zero exit status."""
+    class SubprocessError(Exception):
+        pass
 
-        def __init__(self, returncode, cmd, output=None, stderr=None):
-            self.returncode = returncode
-            self.cmd = cmd
-            self.output = output
-            self.stdout = output
-            self.stderr = stderr
+    class ExtStr(str):
+        def format(format_spec, value):  # Largely incomplete
+            format_spec = format_spec.replace("{}", "%s").replace("{0}", "%s").replace("{:", "%").replace("}", "")
+            return format_spec % (value, )
 
-    @staticmethod
-    def extend_called_process_error(subprocess_lib):
+        def __format__(value, format_spec):  # Largely incomplete
+            return "%"+format_spec % (value, )
+
+
+def _subprocess_called_process_error(already_exist, subprocess_lib):
+    if already_exist:
         class ExtCalledProcessError(subprocess_lib.CalledProcessError):
             """Raised when a process run by check_call() or check_output()
             returns a non-zero exit status."""
@@ -56,14 +57,20 @@ class _Internal:
                     self.stderr = stderr
 
         _InternalReferences.UsedCalledProcessError = ExtCalledProcessError
+    else:
+        class CalledProcessError(subprocess_lib.SubprocessError):
+            """Raised when a process run by check_call() or check_output()
+            returns a non-zero exit status."""
 
-    class ExtStr(str):
-        def format(format_spec, value):  # Largely incomplete
-            format_spec = format_spec.replace("{}", "%s").replace("{0}", "%s").replace("{:", "%").replace("}", "")
-            return format_spec % (value, )
+            def __init__(self, returncode, cmd, output=None, stderr=None):
+                self.returncode = returncode
+                self.cmd = cmd
+                self.output = output
+                self.stdout = output
+                self.stderr = stderr
 
-        def __format__(value, format_spec):  # Largely incomplete
-            return "%"+format_spec % (value, )
+        _InternalReferences.UsedCalledProcessError = CalledProcessError
+
 
 
 def set_default_encoding(encoding="utf-8"):
@@ -168,6 +175,8 @@ def fix_builtins(override_debug=False):
     # Exceptions
     if builtins_dict.get("BaseException") is None:
         override_dict["BaseException"] = Exception
+    if builtins_dict.get("SubprocessError") is None:
+        override_dict["SubprocessError"] = _Internal.SubprocessError
 
     if 'format' not in str.__dict__:
         override_dict["str"] = _Internal.ExtStr
@@ -204,9 +213,9 @@ def fix_subprocess(override_debug=False, override_exception=False):
 
     if _InternalReferences.UsedCalledProcessError is None:
         if "CalledProcessError" in subprocess.__dict__:
-            _Internal.extend_called_process_error(subprocess)
+            _subprocess_called_process_error(True, subprocess)
         else:
-            _InternalReferences.UsedCalledProcessError = _Internal.CalledProcessError
+            _subprocess_called_process_error(False, subprocess)
             subprocess.CalledProcessError = _InternalReferences.UsedCalledProcessError
 
     def _check_output(*args, **kwargs):
