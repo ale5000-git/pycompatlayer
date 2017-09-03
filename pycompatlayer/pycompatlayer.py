@@ -32,7 +32,7 @@ def set_default_encoding(encoding="utf-8"):
         try:
             reload(sys)
             sys.setdefaultencoding(encoding)
-        except NameError:
+        except (NameError, AttributeError):
             pass
 
 
