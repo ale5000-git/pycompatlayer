@@ -2,7 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-import pycompatlayer
+
+
+def load_module(standalone):
+    if standalone:
+        import sys
+        import os
+        sys.path.insert(0, os.path.join("..", "pycompatlayer"))
+    import pycompatlayer
+    return pycompatlayer
 
 
 class PyCompatLayerTestCase(unittest.TestCase):
@@ -20,5 +28,6 @@ class PyCompatLayerTestCase(unittest.TestCase):
             import __builtin__ as builtins
         del builtins.pycompatlayer
 
+pycompatlayer = load_module(__name__ == "__main__")
 if __name__ == "__main__":
     unittest.main()
