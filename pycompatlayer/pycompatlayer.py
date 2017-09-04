@@ -210,14 +210,14 @@ def fix_subprocess(override_debug=False, override_exception=False):
     import subprocess
 
     # Exceptions
+    if subprocess.__dict__.get("SubprocessError") is None:
+        subprocess.SubprocessError = _Internal.SubprocessError
     if _InternalReferences.UsedCalledProcessError is None:
         if "CalledProcessError" in subprocess.__dict__:
             _subprocess_called_process_error(True, subprocess)
         else:
             _subprocess_called_process_error(False, subprocess)
             subprocess.CalledProcessError = _InternalReferences.UsedCalledProcessError
-    if subprocess.__dict__.get("SubprocessError") is None:
-        subprocess.SubprocessError = _Internal.SubprocessError
 
     def _check_output(*args, **kwargs):
         if "stdout" in kwargs:
