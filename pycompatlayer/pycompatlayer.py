@@ -15,13 +15,19 @@ __copyright__ = "Copyright (C) 2016-2017, ale5000"
 __license__ = "LGPLv3+"
 
 
-class _InternalReferences:
+class _InternalReferences(object):
     """For internal use only."""
     UsedCalledProcessError = None
 
+    def __new__(self, *args, **kwargs):
+        raise TypeError(self.__doc__)
 
-class _Internal:
+
+class _Internal(object):
     """For internal use only."""
+
+    def __new__(self, *args, **kwargs):
+        raise TypeError(self.__doc__)
 
     class SubprocessError(Exception):
         pass
