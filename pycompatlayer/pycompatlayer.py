@@ -19,23 +19,23 @@ class _InternalReferences(object):
     """For internal use only."""
     UsedCalledProcessError = None
 
-    def __new__(self, *args, **kwargs):
-        raise TypeError(self.__doc__)
+    def __new__(cls, *args, **kwargs):
+        raise TypeError(cls.__doc__)
 
 
 class _Internal(object):
     """For internal use only."""
 
-    def __new__(self, *args, **kwargs):
-        raise TypeError(self.__doc__)
+    def __new__(cls, *args, **kwargs):
+        raise TypeError(cls.__doc__)
 
     class SubprocessError(Exception):
         pass
 
     class ExtStr(str):
-        def format(format_spec, value):  # Largely incomplete
-            format_spec = format_spec.replace("{}", "%s").replace("{0}", "%s").replace("{:", "%").replace("}", "")
-            return format_spec % (value, )
+        def format(format_string, *args, **kwargs):  # Largely incomplete (it only use the first value of args)
+            format_string = format_string.replace("{}", "%s").replace("{0}", "%s").replace("{:", "%").replace("}", "")
+            return format_string % (args[0], )
 
         def __format__(value, format_spec):  # Largely incomplete
             return "%"+format_spec % (value, )
