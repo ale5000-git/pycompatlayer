@@ -54,7 +54,7 @@ matrix:
     - python: "nightly"
     - python: "pypy"
     - python: "pypy-5.3.1"
-    - python: "pypy3"
+    - python: "pypy3-2.4.0"
 
     - env: Python=2.7
       os: osx
