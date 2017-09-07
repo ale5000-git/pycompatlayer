@@ -130,7 +130,7 @@ def fix_base(fix_environ):
         if sys.python_bits == 32:
             sys.maxsize = 2147483647
         else:
-            sys.maxsize = 9223372036854775807
+            sys.maxsize = int("9223372036854775807")
 
 
 def fix_builtins(override_debug=False):
