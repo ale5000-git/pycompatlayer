@@ -2,6 +2,23 @@
 
 if [[ -n "$1" ]]; then VER="$1"; else VER="$Python"; fi
 
+echo '*** Python - Installing Virtualenv...'
+if [[ $VER == '3.1' ]]; then
+  VENV_VER='13.1.2'
+elif [[ $VER == '2.5' ]]; then
+  VENV_VER='1.9.1'
+elif [[ $VER == '2.4' ]]; then
+  VENV_VER='1.7.2'
+fi
+
+if [[ -n "$VENV_VER" ]]; then
+  wget -q "https://pypi.python.org/packages/source/v/virtualenv/virtualenv-${VENV_VER}.tar.gz" || exit 1
+  tar -xz -f "virtualenv-${VENV_VER}.tar.gz" || exit 1
+  cd "virtualenv-${VENV_VER}/"
+  "python$VER" setup.py install --prefix="$HOME/.local" || exit 1
+  cd ..
+fi
+
 echo '*** Python - Virtualenv setup in progress...'
 virtualenv -p "python$VER" --setuptools "$HOME/virtualenv/python$VER" || exit 1
 source "$HOME/virtualenv/python$VER/bin/activate" || exit 1
