@@ -20,7 +20,11 @@ if [[ -n "$VENV_VER" ]]; then
 fi
 
 echo '*** Python - Virtualenv setup in progress...'
-"virtualenv-$VER" -p "python$VER" "$HOME/virtualenv/python$VER" || exit 1
+if [[ $VER == '3.1' ]]; then
+  "virtualenv-$VER" -p "python$VER" --no-setuptools "$HOME/virtualenv/python$VER" || exit 1
+else
+  "virtualenv-$VER" -p "python$VER" "$HOME/virtualenv/python$VER" || exit 1
+fi
 source "$HOME/virtualenv/python$VER/bin/activate" || exit 1
 
 export TRAVIS_PYTHON_VERSION="$VER"
