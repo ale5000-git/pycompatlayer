@@ -20,7 +20,7 @@ if [[ -n "$VENV_VER" ]]; then
 fi
 
 echo '*** Python - Virtualenv setup in progress...'
-virtualenv -p "python$VER" "$HOME/virtualenv/python$VER" || exit 1
+"virtualenv-$VER" -p "python$VER" "$HOME/virtualenv/python$VER" || exit 1
 source "$HOME/virtualenv/python$VER/bin/activate" || exit 1
 
 export TRAVIS_PYTHON_VERSION="$VER"
