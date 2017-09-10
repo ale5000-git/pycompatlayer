@@ -56,6 +56,7 @@ matrix:
     - env: Python=2.7
       os: osx
       language: generic
+      before_install: export TRAVIS_PYTHON_VERSION="$Python"
   allow_failures:
     - os: osx
   fast_finish: true
