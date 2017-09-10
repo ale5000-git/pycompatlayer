@@ -189,6 +189,20 @@ def fix_builtins(override_debug=False):
     if builtins_dict.get("BaseException") is None:
         override_dict["BaseException"] = Exception
 
+    # basestring
+    if builtins_dict.get("basestring") is None:
+        if builtins_dict.get("bytes") is None:
+            import types
+            override_dict["basestring"] = types.StringType
+        else:
+            override_dict["basestring"] = (str, bytes)  # It works only when used in isinstance
+    # IntType
+    if getattr(int, "__str__", None) is None:
+        import types
+        override_dict["IntType"] = types.IntType
+    else:
+        override_dict["IntType"] = int  # Python >= 2.2
+
     if 'format' not in str.__dict__:
         override_dict["str"] = _Internal.ExtStr
     # Function 'input'
