@@ -21,7 +21,7 @@ fi
 
 echo '*** Python - Virtualenv setup in progress...'
 if [[ $VER == '3.1' ]]; then
-  "virtualenv-$VER" -p "python$VER" --no-setuptools --no-pip "$HOME/virtualenv/python$VER" || exit 1
+  "virtualenv-$VER" -p "python$VER" --no-setuptools "$HOME/virtualenv/python$VER" || exit 1
 else
   "virtualenv-$VER" -p "python$VER" "$HOME/virtualenv/python$VER" || exit 1
 fi
