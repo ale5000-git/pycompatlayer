@@ -80,6 +80,7 @@ def _subprocess_called_process_error(already_exist, subprocess_lib):
         _InternalReferences.UsedCalledProcessError = CalledProcessError
 
 
+# API
 
 def set_default_encoding(encoding="utf-8"):
     if sys.getdefaultencoding() != encoding:
