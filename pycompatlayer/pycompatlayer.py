@@ -105,16 +105,14 @@ def fix_base(fix_environ):
 
         os.environ["LD_LIBRARY_PATH"] += lib64_path + lib32_path
 
-    def _fix_android_plat():
-        from distutils.spawn import find_executable
-        if find_executable("dalvikvm") is not None:
-            sys.platform = "linux-android"
-
-    if sys.platform == "linux4" or sys.platform.startswith("linux-armv"):
-        _fix_android_plat()
-
-    if sys.platform.startswith("linux") and "-" not in sys.platform:
-        sys.platform = "linux"
+    if sys.platform.startswith("linux"):
+        if "-" not in sys.platform or sys.platform.startswith("linux-arm"):
+            try:
+                import sl4a
+            except ImportError:
+                sys.platform = "linux"
+            else:
+                sys.platform = "linux-android"
 
     if fix_environ and sys.platform == "linux-android":
         _fix_android_environ()
