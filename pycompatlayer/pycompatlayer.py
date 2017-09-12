@@ -96,7 +96,7 @@ def fix_base(fix_environ):
         import os
 
         if "LD_LIBRARY_PATH" not in os.environ:
-            os.environ["LD_LIBRARY_PATH"] = "."
+            os.environ["LD_LIBRARY_PATH"] = ""
 
         lib64_path = ""
         lib32_path = os.pathsep+"/system/lib"+os.pathsep+"/vendor/lib"
