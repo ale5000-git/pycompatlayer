@@ -108,12 +108,11 @@ def fix_base(fix_environ):
 
     if sys.platform.startswith("linux"):
         if "-" not in sys.platform or sys.platform.startswith("linux-arm"):
-            try:
-                import sl4a
-            except ImportError:
-                sys.platform = "linux"
-            else:
+            import os
+            if os.path.exists("/system/bin/dalvikvm"):
                 sys.platform = "linux-android"
+            else:
+                sys.platform = "linux"
 
     if fix_environ and sys.platform == "linux-android":
         _fix_android_environ()
