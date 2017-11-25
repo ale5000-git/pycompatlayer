@@ -99,12 +99,11 @@ def fix_base(fix_environ):
         if "LD_LIBRARY_PATH" not in os.environ:
             os.environ["LD_LIBRARY_PATH"] = ""
 
-        lib64_path = ""
-        lib32_path = os.pathsep+"/system/lib"+os.pathsep+"/vendor/lib"
-        if os.path.exists("/system/lib64"):
-            lib64_path = os.pathsep+"/system/lib64"+os.pathsep+"/vendor/lib64"
+        lib_path = os.pathsep+"/system/lib"+os.pathsep+"/vendor/lib"
+        if sys.python_bits == 64:
+            lib_path = os.pathsep+"/system/lib64"+os.pathsep+"/vendor/lib64" + lib_path
 
-        os.environ["LD_LIBRARY_PATH"] += lib64_path + lib32_path
+        os.environ["LD_LIBRARY_PATH"] += lib_path
 
     if sys.platform.startswith("linux"):
         if "-" not in sys.platform or sys.platform.startswith("linux-arm"):
@@ -118,9 +117,6 @@ def fix_base(fix_environ):
     if sys.platform_codename == "win32":
         sys.platform_codename = "win"
 
-    if fix_environ and sys.platform == "linux-android":
-        _fix_android_environ()
-
     if 'maxsize' in sys.__dict__:
         if sys.maxsize > 2**32:
             sys.python_bits = 64
@@ -133,6 +129,9 @@ def fix_base(fix_environ):
             sys.maxsize = 2147483647
         else:
             sys.maxsize = int("9223372036854775807")
+
+    if fix_environ and sys.platform == "linux-android":
+        _fix_android_environ()
 
 
 def fix_builtins(override_debug=False):
