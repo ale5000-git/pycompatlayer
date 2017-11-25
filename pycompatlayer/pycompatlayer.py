@@ -114,6 +114,10 @@ def fix_base(fix_environ):
             else:
                 sys.platform = "linux"
 
+    sys.platform_codename = sys.platform
+    if sys.platform_codename == "win32":
+        sys.platform_codename = "win"
+
     if fix_environ and sys.platform == "linux-android":
         _fix_android_environ()
 
