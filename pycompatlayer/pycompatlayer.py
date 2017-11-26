@@ -10,7 +10,7 @@ It is still under development, not all functions are supported.
 from __future__ import nested_scopes
 import sys
 
-__version__ = "0.0.10.dev5"
+__version__ = "0.0.10.dev6"
 __author__ = "ale5000"
 __copyright__ = "Copyright (C) 2016-2017, ale5000"
 __license__ = "LGPLv3+"
