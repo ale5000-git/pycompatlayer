@@ -108,7 +108,8 @@ def fix_base(fix_environ):
     if sys.platform.startswith("linux"):
         if "-" not in sys.platform or sys.platform.startswith("linux-arm"):
             import os
-            if os.path.exists("/system/bin/dalvikvm"):
+            vm_path = os.path.join("system", "bin", "dalvikvm")
+            if os.path.exists(os.sep+vm_path) or os.path.exists(os.sep+"system"+os.sep+vm_path):
                 sys.platform = "linux-android"
             else:
                 sys.platform = "linux"
