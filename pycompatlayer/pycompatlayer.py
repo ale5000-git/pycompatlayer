@@ -117,6 +117,8 @@ def fix_base(fix_environ):
     sys.platform_codename = sys.platform
     if sys.platform_codename == "win32":
         sys.platform_codename = "win"
+    elif sys.platform_codename == "linux-android":
+        sys.platform_codename = "android"
 
     if 'maxsize' in sys.__dict__:
         if sys.maxsize > 2**32:
