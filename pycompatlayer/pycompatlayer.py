@@ -93,6 +93,19 @@ def set_default_encoding(encoding="utf-8"):
 
 def fix_base(fix_environ):
     """Activate the base compatibility."""
+    def _is_android():
+        import os
+
+        vm_path = os.sep+"system"+os.sep+"bin"+os.sep+"dalvikvm"
+        if os.path.exists(vm_path) or os.path.exists(os.sep+"system"+vm_path):
+            return True
+        try:
+            import android
+            return True
+        except ImportError:
+            pass
+        return False
+
     def _fix_android_environ():
         import os
 
@@ -106,9 +119,7 @@ def fix_base(fix_environ):
         os.environ["LD_LIBRARY_PATH"] += lib_path
 
     if sys.platform.startswith("linux") and sys.platform != "linux-android":
-        import os
-        vm_path = os.path.join("system", "bin", "dalvikvm")
-        if os.path.exists(os.sep+vm_path) or os.path.exists(os.sep+"system"+os.sep+vm_path):
+        if _is_android():
             sys.platform = "linux-android"
         elif "-" not in sys.platform:
             sys.platform = "linux"
