@@ -101,6 +101,7 @@ def fix_base(fix_environ):
             return True
         try:
             import android
+            del android  # Unused import (imported only for Android detection)
             return True
         except ImportError:
             pass
