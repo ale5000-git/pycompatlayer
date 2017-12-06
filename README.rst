@@ -1,5 +1,9 @@
 PyCompatLayer
 =============
+.. image:: https://img.shields.io/bountysource/team/pycompatlayer/activity.svg
+   :alt: Bountysource
+   :target: https://www.bountysource.com/teams/pycompatlayer
+
 .. image:: https://travis-ci.org/ale5000-git/pycompatlayer.svg?branch=master
    :alt: Travis CI
    :target: https://travis-ci.org/ale5000-git/pycompatlayer
