@@ -17,7 +17,7 @@ setuptools.setup(
     url="https://github.com/ale5000-git/pycompatlayer",
     author="ale5000",
     author_email="nospam@nospam",
-    license="LGPLv3+",
+    license="LGPL-3.0-or-later",
     platforms=["any"],
     package_dir={"": "pycompatlayer"},
     py_modules=["pycompatlayer"],
