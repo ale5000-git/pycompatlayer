@@ -13,8 +13,8 @@ PyCompatLayer
    :target: https://codecov.io/gh/ale5000-git/pycompatlayer
 
 
-Latest release
---------------
+Releases
+--------
 .. image:: https://img.shields.io/pypi/v/PyCompatLayer.svg
    :alt: Version
    :target: https://pypi.python.org/pypi/PyCompatLayer
@@ -22,6 +22,10 @@ Latest release
 .. image:: https://img.shields.io/github/license/ale5000-git/pycompatlayer.svg
    :alt: License
    :target: https://github.com/ale5000-git/pycompatlayer/blob/master/LICENSE
+
+.. image:: https://img.shields.io/github/downloads/ale5000-git/pycompatlayer/total.svg?maxAge=3600
+   :alt: Total GitHub downloads
+   :target: https://github.com/ale5000-git/pycompatlayer/releases
 
 
 Informations
