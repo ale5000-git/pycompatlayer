@@ -20,7 +20,7 @@ PyCompatLayer
 Releases
 --------
 .. image:: https://img.shields.io/pypi/v/PyCompatLayer.svg?maxAge=3600
-   :alt: Latest PyPI version
+   :alt: PyPI release
    :target: https://pypi.python.org/pypi/PyCompatLayer
 
 .. image:: https://img.shields.io/github/license/ale5000-git/pycompatlayer.svg?maxAge=3600
