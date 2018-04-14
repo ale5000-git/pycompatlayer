@@ -2,7 +2,7 @@
 PyCompatLayer
 =============
 :Author: `ale5000 <https://github.com/ale5000-git>`_
-:License: `LGPL-3.0-or-later <LICENSE>`_
+:License: `LGPL-3.0-or-later <LICENSE.LESSER>`_
 
 .. image:: https://img.shields.io/bountysource/team/pycompatlayer/activity.svg?maxAge=3600
    :alt: Bounties
