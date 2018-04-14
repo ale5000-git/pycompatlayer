@@ -22,7 +22,7 @@ Releases
 .. image:: https://img.shields.io/pypi/v/PyCompatLayer.svg?maxAge=3600
    :alt: PyPI release
    :target: https://pypi.python.org/pypi/PyCompatLayer
-|newline|
+|
 
 .. image:: https://img.shields.io/github/release/ale5000-git/pycompatlayer.svg?label=github&maxAge=3600
    :alt: GitHub release
@@ -81,9 +81,3 @@ Code analysis
 .. image:: https://codeclimate.com/github/ale5000-git/pycompatlayer/badges/gpa.svg
    :alt: Code Climate Badge
    :target: https://codeclimate.com/github/ale5000-git/pycompatlayer
-
-
-
-.. |newline| raw:: html
-
-   <br>
