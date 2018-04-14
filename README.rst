@@ -23,9 +23,9 @@ Releases
    :alt: PyPI release
    :target: https://pypi.python.org/pypi/PyCompatLayer
 
-.. image:: https://img.shields.io/github/license/ale5000-git/pycompatlayer.svg?maxAge=3600
-   :alt: License
-   :target: LICENSE
+.. image:: https://img.shields.io/github/release/ale5000-git/pycompatlayer.svg?maxAge=3600
+   :alt: GitHub release
+   :target: https://github.com/ale5000-git/pycompatlayer/releases/latest
 
 .. image:: https://img.shields.io/github/downloads/ale5000-git/pycompatlayer/total.svg?label=GitHub%20downloads&maxAge=3600
    :alt: Total GitHub downloads
