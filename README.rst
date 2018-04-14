@@ -1,7 +1,7 @@
 PyCompatLayer
 =============
-.. image:: https://img.shields.io/bountysource/team/pycompatlayer/activity.svg
-   :alt: Bountysource
+.. image:: https://img.shields.io/bountysource/team/pycompatlayer/activity.svg?maxAge=3600
+   :alt: Bounties
    :target: https://www.bountysource.com/teams/pycompatlayer
 
 .. image:: https://travis-ci.org/ale5000-git/pycompatlayer.svg?branch=master
@@ -15,15 +15,15 @@ PyCompatLayer
 
 Releases
 --------
-.. image:: https://img.shields.io/pypi/v/PyCompatLayer.svg
-   :alt: Version
+.. image:: https://img.shields.io/pypi/v/PyCompatLayer.svg?maxAge=3600
+   :alt: Latest PyPI version
    :target: https://pypi.python.org/pypi/PyCompatLayer
 
-.. image:: https://img.shields.io/github/license/ale5000-git/pycompatlayer.svg
+.. image:: https://img.shields.io/github/license/ale5000-git/pycompatlayer.svg?maxAge=3600
    :alt: License
-   :target: https://github.com/ale5000-git/pycompatlayer/blob/master/LICENSE
+   :target: LICENSE
 
-.. image:: https://img.shields.io/github/downloads/ale5000-git/pycompatlayer/total.svg?maxAge=3600
+.. image:: https://img.shields.io/github/downloads/ale5000-git/pycompatlayer/total.svg?label=GitHub%20downloads&maxAge=3600
    :alt: Total GitHub downloads
    :target: https://github.com/ale5000-git/pycompatlayer/releases
 
@@ -44,7 +44,7 @@ The code lives on GitHub_, where you can report Issues_. The documentation is av
 
 Compatibility
 -------------
-.. image:: https://img.shields.io/pypi/pyversions/PyCompatLayer.svg
+.. image:: https://img.shields.io/pypi/pyversions/PyCompatLayer.svg?maxAge=3600
    :alt: Supported Python versions
    :target: https://pypi.python.org/pypi/PyCompatLayer
 
