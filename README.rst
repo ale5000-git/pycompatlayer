@@ -23,11 +23,11 @@ Releases
    :alt: PyPI release
    :target: https://pypi.python.org/pypi/PyCompatLayer
 
-.. image:: https://img.shields.io/github/release/ale5000-git/pycompatlayer.svg?maxAge=3600
+.. image:: https://img.shields.io/github/release/ale5000-git/pycompatlayer.svg?label=github&maxAge=3600
    :alt: GitHub release
    :target: https://github.com/ale5000-git/pycompatlayer/releases/latest
 
-.. image:: https://img.shields.io/github/downloads/ale5000-git/pycompatlayer/total.svg?label=GitHub%20downloads&maxAge=3600
+.. image:: https://img.shields.io/github/downloads/ale5000-git/pycompatlayer/total.svg?label=github%20downloads&maxAge=3600
    :alt: Total GitHub downloads
    :target: https://github.com/ale5000-git/pycompatlayer/releases
 
@@ -80,3 +80,9 @@ Code analysis
 .. image:: https://codeclimate.com/github/ale5000-git/pycompatlayer/badges/gpa.svg
    :alt: Code Climate Badge
    :target: https://codeclimate.com/github/ale5000-git/pycompatlayer
+
+
+
+.. |newline| raw:: html
+
+   <br>
