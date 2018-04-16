@@ -8,6 +8,7 @@ Contents:
 
    intro
    api
+   LICENSE.LESSER
 
 
 Indices and tables
