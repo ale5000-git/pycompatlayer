@@ -2,4 +2,4 @@
 LICENSE
 *******
 
-.. include:: ../LICENSE
+.. include:: ../LICENSE.rst
