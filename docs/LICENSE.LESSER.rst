@@ -1,1 +1,5 @@
+*******
+LICENSE
+*******
+
 .. include:: ../LICENSE.LESSER
