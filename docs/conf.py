@@ -3,10 +3,11 @@
 
 import sys
 import os
+import datetime
 
 # General information about the project.
 project = 'PyCompatLayer'
-copyright = '2016-2017, ale5000'
+copyright = '2016-' + str(datetime.datetime.now().year) + ', ale5000'
 author = 'ale5000'
 
 # The master toctree document.
