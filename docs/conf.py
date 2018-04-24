@@ -4,11 +4,18 @@
 import sys
 import os
 import datetime
+import fileinput
+import re
 
 # General information about the project.
 project = 'PyCompatLayer'
 copyright = '2016-' + str(datetime.datetime.now().year) + ', ale5000'
 author = 'ale5000'
+
+# Hack to fix the extension of internal links in the generated documentation
+for line in fileinput.input("../README.rst", inplace=1, backup=".bak", mode="rb"):
+    sys.stdout.write(re.sub(r"\`(.+)\s<([\w\.]+)\.rst>\`_", r"`\1 <\2.html>`_", line.decode("utf-8").rstrip()) + "\n")
+sys.stdout.flush()
 
 # The master toctree document.
 master_doc = 'index'
