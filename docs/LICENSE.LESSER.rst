@@ -1,6 +1,6 @@
-*******
+#######
 LICENSE
-*******
+#######
 
 .. include:: ../LICENSE.LESSER.rst
 
