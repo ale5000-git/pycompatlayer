@@ -8,9 +8,9 @@ PyCompatLayer
    :alt: Bounties
    :target: https://www.bountysource.com/teams/pycompatlayer
 
-.. image:: https://travis-ci.org/ale5000-git/pycompatlayer.svg?branch=master
+.. image:: https://travis-ci.com/ale5000-git/pycompatlayer.svg?branch=master
    :alt: Travis CI
-   :target: https://travis-ci.org/ale5000-git/pycompatlayer
+   :target: https://travis-ci.com/ale5000-git/pycompatlayer
 
 .. image:: https://codecov.io/gh/ale5000-git/pycompatlayer/branch/master/graph/badge.svg
    :alt: Coverage
