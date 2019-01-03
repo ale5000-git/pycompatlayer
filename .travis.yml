@@ -14,7 +14,7 @@ matrix:
       addons:
         apt:
           sources:
-            - sourceline: 'ppa:fkrull/deadsnakes'
+            - deadsnakes
           packages:
             - python2.4
             - python2.4-dev
@@ -24,7 +24,7 @@ matrix:
       addons:
         apt:
           sources:
-            - sourceline: 'ppa:fkrull/deadsnakes'
+            - deadsnakes
           packages:
             - python2.5
             - python2.5-dev
@@ -36,7 +36,7 @@ matrix:
       addons:
         apt:
           sources:
-            - sourceline: 'ppa:fkrull/deadsnakes'
+            - deadsnakes
           packages:
             - python3.1
             - python3.1-dev
