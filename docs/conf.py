@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: NONE
+# SPDX-License-Identifier: CC0-1.0
+
+# Configuration file for the Sphinx documentation builder
+# For the full list of built-in configuration values, see the documentation: https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import sys
 import os
@@ -26,10 +31,10 @@ def find_and_fix_documentation_files(path):
     sys.stdout.flush()
 
 
-# General information about the project.
+# Project information
 project = 'PyCompatLayer'
-copyright = '2016-' + str(datetime.datetime.now().year) + ', ale5000'
 author = 'ale5000'
+copyright = '2016-' + str(datetime.datetime.now().year) + ', ale5000'
 
 find_and_fix_documentation_files("../")
 find_and_fix_documentation_files("./")
@@ -45,5 +50,16 @@ sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), '..'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.imgconverter'
+    'sphinx.ext.imgconverter',
+    'sphinx_rtd_theme'
 ]
+
+# Options for HTML output
+html_theme = 'sphinx_rtd_theme'
+html_context = {
+    'display_github': True,
+    'github_user': 'ale5000-git',
+    'github_repo': 'pycompatlayer',
+    'github_version': 'master',
+    'conf_py_path': '/docs/'
+}
