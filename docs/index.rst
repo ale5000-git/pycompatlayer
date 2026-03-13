@@ -13,7 +13,7 @@ Welcome to the documentation for **PyCompatLayer**.
 
    intro
    api
-   LICENSE.LESSER
+   LICENSE-LESSER
    LICENSE
 
 
